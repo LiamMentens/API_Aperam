@@ -11,5 +11,6 @@ namespace ASP_backend.Models
         [Key]
         public long NumberID { get; set; }
         public string Functie { get; set; }
+        public String Wachtwoord { get; set; }
     }
 }

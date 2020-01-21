@@ -16,9 +16,9 @@ namespace ASP_backend.Models
                 return;
             }
 
-            //context.Personen.AddRange(
-            //    new Persoon { Naam = "Test naam", Voornaam = "Test voornaam", Type = 3, }
-            //    );
+            context.Personen.AddRange(
+                new Persoon { Naam = "Test naam", Voornaam = "Test voornaam", Type = 3, }
+                );
             context.SaveChanges();
         }
     }
