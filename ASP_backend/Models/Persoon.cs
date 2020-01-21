@@ -12,6 +12,8 @@ namespace ASP_backend.Models
         public long PersoonID { get; set; }
         public string Naam { get; set; }
         public string Voornaam { get; set; }
+        public string Usernaam { get; set; }
         public long Type { get; set; }
+        public String Wachtwoord { get; set; }
     }
 }
