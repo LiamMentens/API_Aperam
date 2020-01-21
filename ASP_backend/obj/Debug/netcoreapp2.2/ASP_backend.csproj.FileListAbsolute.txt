@@ -1,0 +1,16 @@
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\bin\Debug\netcoreapp2.2\appsettings.Development.json
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\bin\Debug\netcoreapp2.2\appsettings.json
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\bin\Debug\netcoreapp2.2\ASP_backend.deps.json
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\bin\Debug\netcoreapp2.2\ASP_backend.runtimeconfig.json
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\bin\Debug\netcoreapp2.2\ASP_backend.runtimeconfig.dev.json
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\bin\Debug\netcoreapp2.2\ASP_backend.dll
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\bin\Debug\netcoreapp2.2\ASP_backend.pdb
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\obj\Debug\netcoreapp2.2\ASP_backend.csprojAssemblyReference.cache
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\obj\Debug\netcoreapp2.2\ASP_backend.RazorAssemblyInfo.cache
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\obj\Debug\netcoreapp2.2\ASP_backend.RazorAssemblyInfo.cs
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\obj\Debug\netcoreapp2.2\ASP_backend.AssemblyInfoInputs.cache
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\obj\Debug\netcoreapp2.2\ASP_backend.AssemblyInfo.cs
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\obj\Debug\netcoreapp2.2\ASP_backend.RazorTargetAssemblyInfo.cache
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\obj\Debug\netcoreapp2.2\ASP_backend.dll
+D:\3ITF\Project 4.0\ASP_backend\ASP_backend\obj\Debug\netcoreapp2.2\ASP_backend.pdb
