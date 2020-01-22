@@ -14,6 +14,11 @@ using Microsoft.EntityFrameworkCore;
 using ASP_backend.Models;
 using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.Swagger;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using ASP_backend.Helpers;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
+using ASP_backend.Services;
 
 namespace ASP_backend
 {
@@ -43,8 +48,30 @@ namespace ASP_backend
             var appSettingsSection = Configuration.GetSection("AppSettings");
 
             // configure jwt authentication
+            var appSettings = appSettingsSection.Get<AppSettings>();
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
 
             // configure DI for application services
+
+            services.AddScoped<IUserService, UserService>();
+
+            services.Configure<AppSettings>(appSettingsSection);
 
             services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -52,21 +79,21 @@ namespace ASP_backend
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
 
-                //c.AddSecurityDefinition("Bearer", new ApiKeyScheme
-                //{
-                //    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
-                //    Name = "Authorization",
-                //    In = "header",
-                //    Type = "apiKey"
-                //});
+                c.AddSecurityDefinition("Bearer", new ApiKeyScheme
+                {
+                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+                    Name = "Authorization",
+                    In = "header",
+                    Type = "apiKey"
+                });
 
-                //c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
-                //{
-                //    {
-                //        "Bearer",
-                //        Enumerable.Empty<string>()
-                //    },
-                //});
+                c.AddSecurityRequirement(new Dictionary<string, IEnumerable<string>>
+                {
+                    {
+                        "Bearer",
+                        Enumerable.Empty<string>()
+                    },
+                });
             });
         }
 
@@ -83,12 +110,13 @@ namespace ASP_backend
                 app.UseHsts();
             }
             
+
+            app.UseHttpsRedirection();
             app.UseCors("MyPolicy");
             app.UseAuthentication();
             app.UseMvc();
 
             DBInitializer.Initialize(context);
-
             app.UseSwagger();
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ASP_backend API v1");

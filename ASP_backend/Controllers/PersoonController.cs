@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ASP_backend.Models;
+using ASP_backend.Services;
+using System.Text;
+using System.Security.Cryptography;
 
 namespace ASP_backend.Controllers
 {
@@ -13,12 +16,31 @@ namespace ASP_backend.Controllers
     [ApiController]
     public class PersoonController : ControllerBase
     {
+        private IUserService _userService;
         private readonly DataContext _context;
 
-        public PersoonController(DataContext context)
+        public PersoonController(IUserService userService, DataContext context)
         {
+            _userService = userService;
             _context = context;
         }
+
+        [HttpPost("authenticate")]
+        public IActionResult Authenticate([FromBody]Persoon userParam)
+        {
+            // hash password before compare
+            //var data = Encoding.ASCII.GetBytes(userParam.Wachtwoord);
+            //var sha1 = new SHA1CryptoServiceProvider();
+            //userParam.Wachtwoord = Convert.ToBase64String(sha1.ComputeHash(data));
+
+            var persoon = _userService.Authenticate(userParam.Usernaam, userParam.Wachtwoord);
+
+            if (persoon == null)
+                return BadRequest(new { message = "usernme or password is incorrect" });
+
+            return Ok(persoon);
+        }
+
 
         // GET: api/Persoon
         [HttpGet]

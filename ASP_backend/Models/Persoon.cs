@@ -22,5 +22,8 @@ namespace ASP_backend.Models
 
         [NotMapped]
         public Type type { get; set; }
+
+        [NotMapped]
+        public string Token { get; set; }
     }
 }
