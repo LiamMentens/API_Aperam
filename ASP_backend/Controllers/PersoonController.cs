@@ -9,6 +9,7 @@ using ASP_backend.Models;
 using ASP_backend.Services;
 using System.Text;
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASP_backend.Controllers
 {
@@ -64,6 +65,7 @@ namespace ASP_backend.Controllers
         }
 
         // PUT: api/Persoon/5
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPersoon(long id, Persoon persoon)
         {
@@ -94,6 +96,7 @@ namespace ASP_backend.Controllers
         }
 
         // POST: api/Persoon
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Persoon>> PostPersoon(Persoon persoon)
         {
@@ -104,6 +107,7 @@ namespace ASP_backend.Controllers
         }
 
         // DELETE: api/Persoon/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Persoon>> DeletePersoon(long id)
         {
