@@ -46,7 +46,7 @@ namespace ASP_backend.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutType(long id, Type @type)
         {
-            if (id != @type.NumberID)
+            if (id != @type.TypeID)
             {
                 return BadRequest();
             }
@@ -79,7 +79,7 @@ namespace ASP_backend.Controllers
             _context.Types.Add(@type);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetType", new { id = @type.NumberID }, @type);
+            return CreatedAtAction("GetType", new { id = @type.TypeID }, @type);
         }
 
         // DELETE: api/Type/5
@@ -100,7 +100,7 @@ namespace ASP_backend.Controllers
 
         private bool TypeExists(long id)
         {
-            return _context.Types.Any(e => e.NumberID == id);
+            return _context.Types.Any(e => e.TypeID == id);
         }
     }
 }

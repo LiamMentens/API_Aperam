@@ -17,11 +17,11 @@ namespace ASP_backend.Models
             }
 
             context.Personen.AddRange(
-                new Persoon { Naam = "Michiels", Usernaam="mnmpower", Voornaam = "Maarten", Type = 1, },
-                new Persoon { Naam = "Admin", Usernaam = "Admin", Voornaam = "Admin", Type = 1, },
-                new Persoon { Naam = "Gebruiker", Usernaam = "Gebruiker", Voornaam = "Gebruiker", Type = 2, },
-                new Persoon { Naam = "g", Usernaam = "g", Voornaam = "g", Type = 2, },
-                new Persoon { Naam = "a", Usernaam = "a", Voornaam = "a", Type = 1, }
+                new Persoon { Naam = "Michiels", Usernaam="mnmpower", Voornaam = "Maarten", TypeID = 1, Wachtwoord = "R1234-56" },
+                new Persoon { Naam = "Admin", Usernaam = "Admin", Voornaam = "Admin", TypeID = 1, Wachtwoord = "Admin" },
+                new Persoon { Naam = "Gebruiker", Usernaam = "Gebruiker", Voornaam = "Gebruiker", TypeID = 2, Wachtwoord = "Gebruiker" },
+                new Persoon { Naam = "g", Usernaam = "g", Voornaam = "g", TypeID = 2, Wachtwoord="g"},
+                new Persoon { Naam = "a", Usernaam = "a", Voornaam = "a", TypeID = 1, Wachtwoord = "g" }
                 );
 
             context.Types.AddRange(
@@ -35,8 +35,8 @@ namespace ASP_backend.Models
                 );
 
             context.Meldingen.AddRange(
-                new Melding { OvertrederID = 3, PlaatsID = 1, Tijdstip = DateTime.Now },
-                new Melding { OvertrederID = 4, PlaatsID = 2, Tijdstip = DateTime.Now }
+                new Melding { PersoonID = 3, PlaatsID = 1, Tijdstip = DateTime.Now },
+                new Melding { PersoonID = 4, PlaatsID = 2, Tijdstip = DateTime.Now }
                 );
             context.SaveChanges();
         }

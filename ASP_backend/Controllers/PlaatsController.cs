@@ -45,7 +45,7 @@ namespace ASP_backend.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPlaats(long id, Plaats plaats)
         {
-            if (id != plaats.NumberID)
+            if (id != plaats.plaatsID)
             {
                 return BadRequest();
             }
@@ -78,7 +78,7 @@ namespace ASP_backend.Controllers
             _context.Plaatsen.Add(plaats);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPlaats", new { id = plaats.NumberID }, plaats);
+            return CreatedAtAction("GetPlaats", new { id = plaats.plaatsID }, plaats);
         }
 
         // DELETE: api/Plaats/5
@@ -99,7 +99,7 @@ namespace ASP_backend.Controllers
 
         private bool PlaatsExists(long id)
         {
-            return _context.Plaatsen.Any(e => e.NumberID == id);
+            return _context.Plaatsen.Any(e => e.plaatsID == id);
         }
     }
 }

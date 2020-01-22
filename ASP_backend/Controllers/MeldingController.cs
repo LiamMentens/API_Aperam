@@ -24,7 +24,9 @@ namespace ASP_backend.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Melding>>> GetMeldingen()
         {
-            return await _context.Meldingen.ToListAsync();
+            var meldingen = await _context.Meldingen.Include(m => m.Persoon).Include( m => m.Plaats).ToListAsync();
+            
+            return meldingen;
         }
 
         // GET: api/Melding/5
@@ -45,7 +47,7 @@ namespace ASP_backend.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMelding(long id, Melding melding)
         {
-            if (id != melding.NumberID)
+            if (id != melding.MeldingID)
             {
                 return BadRequest();
             }
@@ -78,7 +80,7 @@ namespace ASP_backend.Controllers
             _context.Meldingen.Add(melding);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMelding", new { id = melding.NumberID }, melding);
+            return CreatedAtAction("GetMelding", new { id = melding.MeldingID }, melding);
         }
 
         // DELETE: api/Melding/5
@@ -99,7 +101,7 @@ namespace ASP_backend.Controllers
 
         private bool MeldingExists(long id)
         {
-            return _context.Meldingen.Any(e => e.NumberID == id);
+            return _context.Meldingen.Any(e => e.MeldingID == id);
         }
     }
 }
