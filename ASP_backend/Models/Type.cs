@@ -15,6 +15,6 @@ namespace ASP_backend.Models
 
 
         [NotMapped]
-        public virtual ICollection<Persoon> Personen { get; set; }
+        public ICollection<Persoon> Personen { get; set; }
     }
 }

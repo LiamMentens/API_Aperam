@@ -15,9 +15,9 @@ namespace ASP_backend.Models
         public DateTime Tijdstip { get; set; }
 
         [NotMapped]
-        public virtual Plaats Plaats { get; set; }
+        public Plaats Plaats { get; set; }
 
         [NotMapped]
-        public virtual Persoon Persoon { get; set; }
+        public Persoon Persoon { get; set; }
     }
 }

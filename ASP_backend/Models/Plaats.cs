@@ -16,6 +16,6 @@ namespace ASP_backend.Models
 
 
         [NotMapped]
-        public virtual ICollection<Melding> Meldingen { get; set; }
+        public ICollection<Melding> Meldingen { get; set; }
     }
 }
