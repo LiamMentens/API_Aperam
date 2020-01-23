@@ -1,4 +1,4 @@
 
 .vs/
 
-ASP_backend/obj/Debug/*
+ASP_backend/obj/Debug/netcoreapp2.2/
