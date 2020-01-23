@@ -23,7 +23,7 @@ namespace ASP_backend.Models
             modelBuilder.Entity<Melding>().ToTable("Melding");
             modelBuilder.Entity<Plaats>().ToTable("Plaats");
             modelBuilder.Entity<Type>().ToTable("Type");
-
+            
         }
     }
 }
