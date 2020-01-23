@@ -47,7 +47,9 @@ namespace ASP_backend.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Persoon>>> GetPersonen()
         {
-            return await _context.Personen.ToListAsync();
+            return await _context.Personen
+                .Include(p => p.Type)
+                .ToListAsync();
         }
 
         // GET: api/Persoon/5
@@ -65,7 +67,7 @@ namespace ASP_backend.Controllers
         }
 
         // PUT: api/Persoon/5
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPersoon(long id, Persoon persoon)
         {
@@ -96,7 +98,7 @@ namespace ASP_backend.Controllers
         }
 
         // POST: api/Persoon
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<ActionResult<Persoon>> PostPersoon(Persoon persoon)
         {
@@ -107,7 +109,7 @@ namespace ASP_backend.Controllers
         }
 
         // DELETE: api/Persoon/5
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Persoon>> DeletePersoon(long id)
         {
