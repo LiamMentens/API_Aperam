@@ -2,3 +2,5 @@
 .vs/
 
 ASP_backend/obj/Debug/netcoreapp2.2/
+
+ASP_backend/bin/Debug/netcoreapp2.2/

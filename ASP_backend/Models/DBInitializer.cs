@@ -35,7 +35,8 @@ namespace ASP_backend.Models
                 new Persoon { Naam = "Admin", Usernaam = "Admin", Voornaam = "Admin", TypeID = 1, Wachtwoord = "Admin" },
                 new Persoon { Naam = "Gebruiker", Usernaam = "Gebruiker", Voornaam = "Gebruiker", TypeID = 2, Wachtwoord = "Gebruiker" },
                 new Persoon { Naam = "g", Usernaam = "g", Voornaam = "g", TypeID = 2, Wachtwoord = "g" },
-                new Persoon { Naam = "a", Usernaam = "a", Voornaam = "a", TypeID = 1, Wachtwoord = "g" }
+                new Persoon { Naam = "a", Usernaam = "a", Voornaam = "a", TypeID = 1, Wachtwoord = "g" },
+                new Persoon { Naam = "ba", Usernaam = "ba", Voornaam = "ba", TypeID = 2, Wachtwoord = "dfgg" }
                 );
 
             context.SaveChanges();
