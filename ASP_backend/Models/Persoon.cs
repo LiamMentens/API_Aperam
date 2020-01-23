@@ -17,11 +17,9 @@ namespace ASP_backend.Models
         public String Wachtwoord { get; set; }
 
 
-        [NotMapped]
-        public ICollection<Melding> Meldingen { get; set; }
-
-        [NotMapped]
-        public Type type { get; set; }
+        
+        public virtual ICollection<Melding> Meldingen { get; set; }
+        public virtual Type Type { get; set; }
 
         [NotMapped]
         public string Token { get; set; }

@@ -14,8 +14,7 @@ namespace ASP_backend.Models
         public double Xcord { get; set; }
         public double Ycord { get; set; }
 
-
-        [NotMapped]
-        public ICollection<Melding> Meldingen { get; set; }
+        
+        public virtual ICollection<Melding> Meldingen { get; set; }
     }
 }

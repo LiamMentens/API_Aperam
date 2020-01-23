@@ -12,9 +12,7 @@ namespace ASP_backend.Models
         public long TypeID { get; set; }
         public string Functie { get; set; }
 
-
-
-        [NotMapped]
-        public ICollection<Persoon> Personen { get; set; }
+        
+        public virtual ICollection<Persoon> Personen { get; set; }
     }
 }

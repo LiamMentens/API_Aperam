@@ -13,11 +13,8 @@ namespace ASP_backend.Models
         public long PersoonID { get; set; }
         public long PlaatsID { get; set; }
         public DateTime Tijdstip { get; set; }
-
-        [NotMapped]
-        public Plaats Plaats { get; set; }
-
-        [NotMapped]
-        public Persoon Persoon { get; set; }
+        
+        public virtual Plaats Plaats { get; set; }
+        public virtual Persoon Persoon { get; set; }
     }
 }
