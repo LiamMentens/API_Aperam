@@ -86,6 +86,11 @@ namespace ASP_backend.Controllers
         [HttpPost]
         public async Task<ActionResult<Melding>> PostMelding(Melding melding)
         {
+            if (melding.Tijdstip == null)
+            {
+                melding.Tijdstip = DateTime.Now;
+            }
+
             _context.Meldingen.Add(melding);
             await _context.SaveChangesAsync();
 
