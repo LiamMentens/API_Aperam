@@ -117,5 +117,19 @@ namespace ASP_backend.Controllers
         {
             return _context.Meldingen.Any(e => e.MeldingID == id);
         }
+
+
+        [HttpGet]
+        [Route("countEachMonth")]
+        public async Task<List<int>> GetCountEachMonth(string year)
+        {
+            List<int> countMonthList = new List<int>();
+            for (int i = 1; i <= 12; i++)
+            {
+                countMonthList.Add(await _context.Meldingen.Where(m => m.Tijdstip.Month.ToString() == i.ToString() && m.Tijdstip.Year.ToString() == year).CountAsync());
+            }
+
+            return countMonthList;
+        }
     }
 }

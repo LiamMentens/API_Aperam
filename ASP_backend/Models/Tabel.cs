@@ -12,7 +12,7 @@ namespace ASP_backend.Models
         public string Voornaam { get; set; }
         public string Type { get; set; }
         public int Overtredingen { get; set; }
-        public DateTime? Recentste { get; set; }
+        public DateTime Recentste { get; set; }
         public string Locatie { get; set; }
 
     }
