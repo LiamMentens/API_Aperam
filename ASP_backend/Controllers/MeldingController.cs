@@ -48,6 +48,8 @@ namespace ASP_backend.Controllers
             {
                 return NotFound();
             }
+            var persoon = await _context.Personen.FindAsync(melding.PersoonID);
+            melding.Persoon = persoon;
 
             return melding;
         }
