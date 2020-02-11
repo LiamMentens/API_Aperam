@@ -59,6 +59,16 @@ namespace ASP_backend.Models
                 new Melding { PersoonID = 9, PlaatsID = 1, Tijdstip = new DateTime(2020, 1, 25, 15, 23, 58) },
                 new Melding { PersoonID = 9, PlaatsID = 1, Tijdstip = new DateTime(2020, 1, 16, 12, 01, 10) },
                 new Melding { PersoonID = 9, PlaatsID = 2, Tijdstip = new DateTime(2020, 1, 5, 10, 12, 16) },
+
+                new Melding { PersoonID = 9, PlaatsID = 2, Tijdstip = new DateTime(2019, 3, 5, 10, 12, 16) },
+                new Melding { PersoonID = 9, PlaatsID = 2, Tijdstip = new DateTime(2020, 4, 5, 10, 12, 16) },
+                new Melding { PersoonID = 9, PlaatsID = 2, Tijdstip = new DateTime(2020, 3, 5, 10, 12, 16) },
+                new Melding { PersoonID = 9, PlaatsID = 2, Tijdstip = new DateTime(2020, 3, 5, 10, 12, 16) },
+                new Melding { PersoonID = 9, PlaatsID = 2, Tijdstip = new DateTime(2020, 3, 5, 10, 12, 16) },
+                new Melding { PersoonID = 9, PlaatsID = 2, Tijdstip = new DateTime(2020, 3, 5, 10, 12, 16) },
+                new Melding { PersoonID = 9, PlaatsID = 2, Tijdstip = new DateTime(2020, 3, 5, 10, 12, 16) },
+                new Melding { PersoonID = 9, PlaatsID = 2, Tijdstip = new DateTime(2020, 3, 5, 10, 12, 16) },
+
                 new Melding { PersoonID = 9, PlaatsID = 1, Tijdstip = new DateTime(2019, 12, 25, 9, 30, 28) }
                 );
 
