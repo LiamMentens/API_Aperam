@@ -126,9 +126,24 @@ namespace ASP_backend.Controllers
         public async Task<List<int>> GetCountEachMonth(string year)
         {
             List<int> countMonthList = new List<int>();
+            List<Melding> alleMeldingen = new List<Melding>();
+            alleMeldingen = await _context.Meldingen.ToListAsync();
             for (int i = 1; i <= 12; i++)
             {
-                countMonthList.Add(await _context.Meldingen.Where(m => m.Tijdstip.Month.ToString() == i.ToString() && m.Tijdstip.Year.ToString() == year).CountAsync());
+                List<Melding> maandMeldingen = new List<Melding>();
+                foreach (var melding in alleMeldingen)
+                {
+                    if (melding.Tijdstip!= null)
+                    {
+                        DateTime tijdstip = (DateTime) melding.Tijdstip;
+                        if (tijdstip.Month.ToString() == i.ToString() && tijdstip.Year.ToString() == year)
+                        {
+                            maandMeldingen.Add(melding);
+                        }
+
+                    }
+                }
+                countMonthList.Add(maandMeldingen.Count());
             }
 
             return countMonthList;

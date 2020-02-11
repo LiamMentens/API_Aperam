@@ -61,6 +61,7 @@ namespace ASP_backend.Controllers
                 tabel.Overtredingen = persoon.Meldingen.Count();
                 if (recentsteMelding != null)
                 {
+
                     tabel.Recentste = recentsteMelding.Tijdstip;
                     tabel.Locatie = recentsteMelding.Plaats.Naam;
                 }

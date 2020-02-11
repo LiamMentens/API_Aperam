@@ -48,6 +48,7 @@ namespace ASP_backend.Models
             //y-m-d h-m-s
             context.Meldingen.AddRange(
                 new Melding { PersoonID = 3, PlaatsID = 1, Tijdstip = new DateTime(2020, 1, 13, 8, 52, 43) },
+                new Melding { PersoonID = 3, PlaatsID = 1, Tijdstip = new DateTime(1000, 1, 1, 1, 1, 1) },
                 new Melding { PersoonID = 3, PlaatsID = 1, Tijdstip = new DateTime(2019, 12, 3, 5, 32, 42) },
                 new Melding { PersoonID = 4, PlaatsID = 2, Tijdstip = new DateTime(2020, 1, 27, 8, 49, 29) },
                 new Melding { PersoonID = 5, PlaatsID = 2, Tijdstip = new DateTime(2020, 1, 17, 8, 47, 18) },

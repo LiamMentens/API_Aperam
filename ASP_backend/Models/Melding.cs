@@ -12,7 +12,7 @@ namespace ASP_backend.Models
         public long MeldingID { get; set; }
         public long PersoonID { get; set; }
         public long PlaatsID { get; set; }
-        public DateTime Tijdstip { get; set; }
+        public DateTime? Tijdstip { get; set; }
         
         public virtual Plaats Plaats { get; set; }
         public virtual Persoon Persoon { get; set; }
