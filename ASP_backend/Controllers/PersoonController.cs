@@ -44,6 +44,7 @@ namespace ASP_backend.Controllers
 
 
         // GET: api/Persoon
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Persoon>>> GetPersonen()
         {
@@ -53,6 +54,7 @@ namespace ASP_backend.Controllers
         }
 
         // GET: api/Persoon/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Persoon>> GetPersoon(long id)
         {
@@ -67,7 +69,7 @@ namespace ASP_backend.Controllers
         }
 
         // PUT: api/Persoon/5
-        //[Authorize]
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPersoon(long id, Persoon persoon)
         {
@@ -98,7 +100,7 @@ namespace ASP_backend.Controllers
         }
 
         // POST: api/Persoon
-        //[Authorize]
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Persoon>> PostPersoon(Persoon persoon)
         {
@@ -109,7 +111,7 @@ namespace ASP_backend.Controllers
         }
 
         // DELETE: api/Persoon/5
-        //[Authorize]
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Persoon>> DeletePersoon(long id)
         {

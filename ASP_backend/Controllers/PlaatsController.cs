@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ASP_backend.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASP_backend.Controllers
 {
@@ -21,6 +22,7 @@ namespace ASP_backend.Controllers
         }
 
         // GET: api/Plaats
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Plaats>>> GetPlaatsen()
         {
@@ -28,6 +30,7 @@ namespace ASP_backend.Controllers
         }
 
         // GET: api/Plaats/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Plaats>> GetPlaats(long id)
         {
@@ -42,6 +45,7 @@ namespace ASP_backend.Controllers
         }
 
         // PUT: api/Plaats/5
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPlaats(long id, Plaats plaats)
         {
@@ -72,6 +76,7 @@ namespace ASP_backend.Controllers
         }
 
         // POST: api/Plaats
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Plaats>> PostPlaats(Plaats plaats)
         {
@@ -82,6 +87,7 @@ namespace ASP_backend.Controllers
         }
 
         // DELETE: api/Plaats/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Plaats>> DeletePlaats(long id)
         {

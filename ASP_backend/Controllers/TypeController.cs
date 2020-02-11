@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ASP_backend.Models;
 using Type = ASP_backend.Models.Type;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASP_backend.Controllers
 {
@@ -22,6 +23,7 @@ namespace ASP_backend.Controllers
         }
 
         // GET: api/Type
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Type>>> GetTypes()
         {
@@ -29,6 +31,7 @@ namespace ASP_backend.Controllers
         }
 
         // GET: api/Type/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Models.Type>> GetType(long id)
         {
@@ -43,6 +46,7 @@ namespace ASP_backend.Controllers
         }
 
         // PUT: api/Type/5
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutType(long id, Type @type)
         {
@@ -73,6 +77,7 @@ namespace ASP_backend.Controllers
         }
 
         // POST: api/Type
+        [Authorize]
         [HttpPost]
         public async Task<ActionResult<Type>> PostType(Type @type)
         {
@@ -83,6 +88,7 @@ namespace ASP_backend.Controllers
         }
 
         // DELETE: api/Type/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Type>> DeleteType(long id)
         {

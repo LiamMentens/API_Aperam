@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ASP_backend.Models;
 using ASP_backend.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +22,7 @@ namespace ASP_backend.Controllers
         }
 
         // GET: api/DashboardUserVM
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<DashboardUserVM>> GetDashboardUserVM()
         {

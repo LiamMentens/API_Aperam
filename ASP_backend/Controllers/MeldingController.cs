@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ASP_backend.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ASP_backend.Controllers
 {
@@ -21,6 +22,7 @@ namespace ASP_backend.Controllers
         }
 
         // GET: api/Melding
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Melding>>> GetMeldingen()
         {
@@ -39,6 +41,7 @@ namespace ASP_backend.Controllers
         }
 
         // GET: api/Melding/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Melding>> GetMelding(long id)
         {
@@ -100,6 +103,7 @@ namespace ASP_backend.Controllers
         }
 
         // DELETE: api/Melding/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult<Melding>> DeleteMelding(long id)
         {
@@ -122,6 +126,7 @@ namespace ASP_backend.Controllers
 
 
         [HttpGet]
+        [Authorize]
         [Route("countEachMonth")]
         public async Task<List<int>> GetCountEachMonth(string year)
         {
