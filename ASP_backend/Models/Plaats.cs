@@ -15,6 +15,6 @@ namespace ASP_backend.Models
         public double Ycord { get; set; }
 
         
-        public virtual ICollection<Melding> Meldingen { get; set; }
+        //public virtual ICollection<Melding> Meldingen { get; set; }
     }
 }

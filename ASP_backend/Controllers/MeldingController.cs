@@ -26,16 +26,17 @@ namespace ASP_backend.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Melding>>> GetMeldingen()
         {
-            var meldingen = await _context.Meldingen.ToListAsync();
+            var meldingen = await _context.Meldingen.Include(p => p.Persoon).Include(p => p.Plaats).ToListAsync();
+            //var meldingen = await _context.Meldingen.ToListAsync();
 
-            foreach (var melding in meldingen)
-            {
-                var plaats = await _context.Plaatsen.Where(p => p.plaatsID == melding.PlaatsID).SingleOrDefaultAsync();
-                var persoon = await _context.Personen.Where(p => p.PersoonID == melding.PersoonID).SingleOrDefaultAsync();
+            //foreach (var melding in meldingen)
+            //{
+            //    var plaats = await _context.Plaatsen.Where(p => p.plaatsID == melding.PlaatsID).SingleOrDefaultAsync();
+            //    var persoon = await _context.Personen.Where(p => p.PersoonID == melding.PersoonID).SingleOrDefaultAsync();
 
-                melding.Plaats = plaats;
-                melding.Persoon = persoon;
-            }
+            //    melding.Plaats = plaats;
+            //    melding.Persoon = persoon;
+            //}
 
             return meldingen;
         }
